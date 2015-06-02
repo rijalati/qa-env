@@ -81,7 +81,7 @@ RUN mv index.html aur.sh
 RUN chmod +x aur.sh
 RUN ["/bin/sh", "/home/admin/aur.sh", "-si", "--noconfirm", "aura-bin"]
 RUN sudo aura -A --noconfirm --force tm s6 selenium-server-standalone rc.local.d star google-chrome openssh-hpn-git 
-
+RUN sudo pacman -S openntpd
 RUN git clone https://github.com/vmware/pyvmomi-community-samples.git
 RUN git clone https://github.com/vmware/pyvmomi-tools.git
 RUN git clone https://github.com/lamw/vghetto-scripts.git
