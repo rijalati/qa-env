@@ -96,4 +96,4 @@ RUN cp dotfiles/kshrc ~/.kshrc
 #CMD ["/usr/bin/bash"]
 #CMD ["/usr/bin/mksh"]
 #CMD ["/bin/sh"]
-CMD ["/opt/ast/bin/ksh93"]
+CMD ["/opt/ast/bin/ksh"]
