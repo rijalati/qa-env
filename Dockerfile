@@ -64,7 +64,7 @@ RUN pip2 install robotframework-databaselibrary
 RUN useradd -m -G wheel -U admin 
 RUN echo 'admin:secret' | chpasswd
 RUN echo 'admin ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN pacman -R --noconfirm systemd-sysvcompat openssh
+RUN pacman -R --noconfirm systemd-sysvcompat openssh autossh
 USER admin
 ENV HOME /home/admin
 ENV LANG en_US.UTF-8
