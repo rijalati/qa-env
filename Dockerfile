@@ -82,7 +82,7 @@ RUN git clone https://github.com/lamw/vghetto-scripts.git
 RUN git clone https://github.com/robotframework/RIDE.git 
 RUN git clone https://github.com/rijalati/dotfiles.git
 RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
-RUN bash -c "pyenv update"
+RUN bash --init-file /home/admin/.bashrc -c "pyenv update"
 RUN wget http://download.opensuse.org/repositories/home:/zhonghuaren/Fedora_21/x86_64/nmake-20110208-6.1.x86_64.rpm
 RUN sudo rpm -ivh nmake-20110208-6.1.x86_64.rpm
 
