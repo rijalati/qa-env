@@ -75,11 +75,11 @@ RUN mv index.html aur.sh
 RUN chmod +x aur.sh
 RUN ["/bin/sh", "/home/admin/aur.sh", "-si", "--noconfirm", "aura-bin"]
 RUN sudo aura -A --noconfirm --force tm s6 selenium-server-standalone rc.local.d star rpm-org google-chrome openssh-hpn-git 
-RUN sudo aura -S autossh
 
 RUN git clone https://github.com/vmware/pyvmomi-community-samples.git
 RUN git clone https://github.com/vmware/pyvmomi-tools.git
 RUN git clone https://github.com/lamw/vghetto-scripts.git
+RUN git clone https://github.com/robotframework/RIDE.git 
 RUN git clone https://github.com/rijalati/dotfiles.git
 RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
 RUN bash -c "pyenv update"
