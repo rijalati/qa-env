@@ -87,6 +87,10 @@ RUN git clone https://github.com/vmware/pyvmomi-tools.git
 RUN git clone https://github.com/lamw/vghetto-scripts.git
 RUN git clone https://github.com/robotframework/RIDE.git 
 RUN git clone https://github.com/rijalati/dotfiles.git
+RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+RUN echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+RUN echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+
 RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
 RUN bash -c "source .bashrc && if [[ -x /home/admin/.bash_profile ]]; then source ./.bash_profile && pyenv update; fi;"
 
