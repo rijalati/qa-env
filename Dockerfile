@@ -36,7 +36,8 @@ RUN pacman -Syu --noconfirm --needed \
     hping \
     autossh \
     nmap \
-    traceroute 
+    traceroute \
+    tmux
 
 RUN pip2 install --upgrade pip setuptools 
 RUN pip2 install \
