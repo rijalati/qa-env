@@ -36,7 +36,8 @@ RUN pacman -Syu --noconfirm --needed \
     hping \
     nmap \
     traceroute \
-    tmux
+    tmux \
+    docker
 
 RUN pip2 install --upgrade pip setuptools 
 RUN pip2 install \
@@ -57,7 +58,8 @@ RUN pip2 install \
     pep8 \
     pylint \
     jedi \
-    pyvmomi 
+    pyvmomi \
+    Cython
     
 RUN pip2 install robotframework-databaselibrary
 RUN mkdir -p /opt/ast/bin
@@ -80,7 +82,7 @@ RUN wget -o aur.sh aur.sh
 RUN mv index.html aur.sh
 RUN chmod +x aur.sh
 RUN ["/bin/sh", "/home/admin/aur.sh", "-si", "--noconfirm", "aura-bin"]
-RUN sudo aura -A --noconfirm --force tm s6 selenium-server-standalone rc.local.d star google-chrome openssh-hpn-git 
+RUN sudo aura -A --noconfirm --force tm s6 selenium-server-standalone rc.local.d star openssh-hpn-git docker-machine docker-swarm docker-compose flocker mawk scsh-git 
 RUN sudo pacman -S --noconfirm openntpd man
 RUN sudo mandb --quiet
 RUN git clone https://github.com/vmware/pyvmomi-community-samples.git
@@ -102,3 +104,4 @@ RUN cp dotfiles/kshrc ~/.kshrc
 #CMD ["/usr/bin/mksh"]
 #CMD ["/bin/sh"]
 CMD ["/opt/ast/bin/ksh"]
+
