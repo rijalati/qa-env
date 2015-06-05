@@ -37,7 +37,8 @@ RUN pacman -Syu --noconfirm --needed \
     nmap \
     traceroute \
     tmux \
-    docker
+    docker \
+    htop
 
 RUN pip2 install --upgrade pip setuptools 
 RUN pip2 install \
@@ -83,7 +84,7 @@ RUN mv index.html aur.sh
 RUN chmod +x aur.sh
 RUN ["/bin/sh", "/home/admin/aur.sh", "-si", "--noconfirm", "aura-bin"]
 RUN sudo aura -A --noconfirm --force tm s6 selenium-server-standalone rc.local.d star openssh-hpn-git docker-machine docker-swarm docker-compose flocker mawk scsh-git 
-RUN sudo pacman -S --noconfirm openntpd man
+RUN sudo pacman -S --noconfirm openntpd man lxc
 RUN sudo mandb --quiet
 RUN git clone https://github.com/vmware/pyvmomi-community-samples.git
 RUN git clone https://github.com/vmware/pyvmomi-tools.git
